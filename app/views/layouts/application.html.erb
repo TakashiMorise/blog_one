@@ -15,8 +15,8 @@
       </div>
         <% if user_signed_in? %>
           <div class="header__buttons">
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-            <a class="button" href="/blogs/new">投稿する</a>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'header__button' %>
+            <%= link_to "投稿する", blogs_new_path, method: :get %>
           </div>
         <% else %>
           <div class="header__buttons">
