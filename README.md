@@ -11,7 +11,27 @@ Things you may want to cover:
 
 * Configuration
 
-* Database creation
+# Database creation
+
+## blogs table
+
+|Column|Type|Option|
+|------|----|------|
+|text|text| - | - |
+|user_id|integer|null: false, foreign_key|
+
+### Association
+- belogns_to :user
+
+## users table
+
+|Column|Type|Option|
+|------|----|------|
+|name|string|null: false|
+|email|string|null: false, unique: true|
+
+### Association
+- has_many :blogs
 
 * Database initialization
 
