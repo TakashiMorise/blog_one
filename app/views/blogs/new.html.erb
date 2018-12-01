@@ -1,0 +1,9 @@
+<div>
+  <%= form_tag('/blogs', method: :post) do %>
+    <h3>
+      投稿する
+    </h3>
+    <textarea placeholder="ブログを書き込んでください" cols="30" name="text" rows="10"></textarea><br>
+    <input type="submit" value="SENT">
+  <% end %>
+</div>
