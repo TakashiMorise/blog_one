@@ -1,1 +1,12 @@
-<h1>Hellow my new blog page</h1>
+<div class="contents row">
+  <% @blogs.each do |blog| %>
+    <div class="blog-conteiner">
+      <%= simple_format(blog.text) %>
+    </div>
+  <% end %>
+</div>
+
+
+
+
+
