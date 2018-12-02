@@ -8,6 +8,9 @@
         <div class="blogview__button">
           <%= link_to "削除", "/blogs/#{blog.id}", method: :delete, class: 'button' %>
         </div>
+        <div class="blogview__button">
+          <%= link_to "編集", "/blogs/#{blog.id}/edit", method: :get, class: 'button' %>
+        </div>
       <% end %>
     </div>
   <% end %>
