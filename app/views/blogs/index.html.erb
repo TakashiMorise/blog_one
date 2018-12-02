@@ -1,23 +1,6 @@
 <div class="contents row">
   <% @blogs.each do |blog| %>
-    <div class="blogview">
-      <div class="blogview__text">
-        <%= simple_format(blog.text) %>
-      </div>
-      <% if user_signed_in? && (blog.user_id == current_user.id) %>
-        <div class="blogview__button">
-          <%= link_to "削除", "/blogs/#{blog.id}", method: :delete, class: 'button' %>
-        </div>
-        <div class="blogview__button">
-          <%= link_to "編集", "/blogs/#{blog.id}/edit", method: :get, class: 'button' %>
-        </div>
-      <% end %>
-    </div>
+    <%= render partial: "blog", locals: {blog: blog } %>
   <% end %>
   <%= paginate(@blogs) %>
 </div>
-
-
-
-
-
