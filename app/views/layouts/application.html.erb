@@ -17,7 +17,7 @@
           <div class="header__buttons">
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'header__button' %>
             <%= link_to "投稿する", blogs_new_path, method: :get %>
-            <a href="/users/#{current_user.id/}">マイページ</a>
+            <a href="/users/<%=current_user.id %>">マイページ</a>
           </div>
         <% else %>
           <div class="header__buttons">
