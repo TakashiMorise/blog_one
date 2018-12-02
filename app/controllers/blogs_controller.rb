@@ -20,6 +20,16 @@ class BlogsController < ApplicationController
     redirect_to controller: :blogs, action: :index
   end
 
+  def edit
+    @blog = Blog.find(params[:id])
+  end
+
+  def update
+    blog = Blog.find(params[:id])
+    blog.update(blog_params) if blog.user_id == current_user.id
+    redirect_to controller: :blogs, action: :index
+  end
+
   private
   def blog_params
     params.permit(:text)
