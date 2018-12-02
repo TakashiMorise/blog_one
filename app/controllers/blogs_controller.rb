@@ -14,6 +14,12 @@ class BlogsController < ApplicationController
     redirect_to controller: :blogs, action: :index
   end
 
+  def destroy
+    blog = Blog.find(params[:id])
+    blog.destroy if blog.user_id == current_user.id
+    redirect_to controller: :blogs, action: :index
+  end
+
   private
   def blog_params
     params.permit(:text)
