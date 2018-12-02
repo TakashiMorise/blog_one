@@ -1,7 +1,14 @@
 <div class="contents row">
   <% @blogs.each do |blog| %>
-    <div class="blog-conteiner">
-      <%= simple_format(blog.text) %>
+    <div class="blogview">
+      <div class="blogview__text">
+        <%= simple_format(blog.text) %>
+      </div>
+      <% if user_signed_in? && (blog.user_id == current_user.id) %>
+        <div class="blogview__button">
+          <%= link_to "削除", "/blogs/#{blog.id}", method: :delete, class: 'button' %>
+        </div>
+      <% end %>
     </div>
   <% end %>
   <%= paginate(@blogs) %>
